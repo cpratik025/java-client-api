@@ -51,6 +51,7 @@ public class FolderJob extends Job {
      * @return list of defined jobs (summary level, for details {@link Job#details()}.
      */
     public Map<String, Job> getJobs() {
+        //FIXME: Check for null of jobs? Can that happen?
         return jobs.stream()
                 .map(SET_CLIENT(this.client))
                 .collect(Collectors.toMap(k -> k.getName(), Function.identity()));
@@ -61,8 +62,10 @@ public class FolderJob extends Job {
      *
      * @param name the name of the job.
      * @return the given job
+     * @throws IllegalArgumentException in case if the {@code name} does not exist.
      */
     public Job getJob(String name) {
+        //FIXME: Check for null of jobs? Can that happen?
         return jobs.stream()
             .map(SET_CLIENT(this.client))
             .filter(item -> item.getName().equals(name))
