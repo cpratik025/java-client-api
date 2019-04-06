@@ -4,7 +4,10 @@
 
  * [Fixed Issue 395][issue-395]
    
-   Remove google guava lib
+   * Remove google guava lib
+   * Removed also the creation of the shaded artifact `stash`
+     cause we do not rely on Guava anymore. So you 
+     can use the original artifact directly.
 
  * [Fixed Issue 402][issue-402]
    

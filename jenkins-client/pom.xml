@@ -123,17 +123,6 @@
         <artifactId>maven-shade-plugin</artifactId>
         <executions>
           <execution>
-            <id>stash</id>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-            <configuration>
-              <shadedArtifactAttached>true</shadedArtifactAttached>
-              <shadedClassifierName>stash</shadedClassifierName>
-            </configuration>
-          </execution>
-          <execution>
             <id>httpclient</id>
             <phase>package</phase>
             <goals>
